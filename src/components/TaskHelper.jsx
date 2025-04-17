@@ -9,7 +9,9 @@ export const AITaskHelper = () => {
   // Azure OpenAI APIを呼び出す関数
   const callAzureOpenAI = async (prompt) => {
     setIsLoading(true);
-    console.warn("####", process.env.REACT_APP_AZURE_OPENAI_ENDPOINT);
+    console.warn("##111##", process.env.REACT_APP_AZURE_OPENAI_ENDPOINT);
+    console.warn("##222##", process.env.REACT_APP_AZURE_OPENAI_KEY);
+
     try {
       const response = await axios.post(
         process.env.REACT_APP_AZURE_OPENAI_ENDPOINT,
