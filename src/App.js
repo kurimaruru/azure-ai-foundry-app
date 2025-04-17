@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { AITaskHelper } from "./components/TaskHelper";
 const TaskManager = () => {
   // タスクのステート管理
   const [tasks, setTasks] = useState(() => {
@@ -247,6 +247,7 @@ const TaskManager = () => {
         {tasks.filter((t) => t.completed).length} | 未完了:{" "}
         {tasks.filter((t) => !t.completed).length}
       </div>
+      <AITaskHelper />
     </div>
   );
 };
