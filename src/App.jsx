@@ -18,7 +18,7 @@ const TaskManager = () => {
     markAll,
     clearCompleted,
   } = useTaskManager();
-
+  console.log(filteredTasks)
   return (
     <div className="flex flex-col items-center p-4 max-w-2xl mx-auto bg-white rounded-lg shadow">
       <h1 className="text-2xl font-bold mb-4">タスク管理アプリ</h1>

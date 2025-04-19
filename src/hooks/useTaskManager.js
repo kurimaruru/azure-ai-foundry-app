@@ -20,7 +20,7 @@ export const useTaskManager = () => {
       description,
       dueDate,
       completed: false,
-      createdAt: new Date().toLocaleString(),
+      dueDate: new Date().toLocaleString(),
     };
 
     setTasks([...tasks, newTask]);

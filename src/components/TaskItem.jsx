@@ -91,7 +91,7 @@ const TaskItem = ({ task, onToggleComplete, onDelete, onUpdate }) => {
             </div>
             <div className="flex items-center space-x-2">
               <span className="text-xs text-gray-500">
-                {task.createdAt}
+                {task.dueDate}
               </span>
               <button
                 onClick={() => setIsEditing(true)}
