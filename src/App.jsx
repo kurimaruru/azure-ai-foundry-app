@@ -29,6 +29,11 @@ const TaskManager = () => {
         markAll={markAll}
         clearCompleted={clearCompleted}
       />
+          <div className="w-full mt-4 text-sm text-gray-500">
+            全タスク: {tasks.length} | 完了済み:{" "}
+            {tasks.filter((t) => t.completed).length} | 未完了:{" "}
+            {tasks.filter((t) => !t.completed).length}
+          </div>
       <TaskList
         tasks={filteredTasks}
         onToggleComplete={toggleComplete}
@@ -36,11 +41,7 @@ const TaskManager = () => {
         onUpdate={updateTask}
       />
 
-      <div className="w-full mt-4 text-sm text-gray-500">
-        全タスク: {tasks.length} | 完了済み:{" "}
-        {tasks.filter((t) => t.completed).length} | 未完了:{" "}
-        {tasks.filter((t) => !t.completed).length}
-      </div>
+
       <AITaskHelper filteredTasks={filteredTasks} />
     </div>
   );

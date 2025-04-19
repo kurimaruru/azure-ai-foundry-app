@@ -7,6 +7,9 @@ const TaskForm = ({ onAddTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!newTaskTitle.trim() || !description.trim() || !dueDate) {
+      return;
+    }
     onAddTask(newTaskTitle, description, dueDate);
     setNewTaskTitle("");
     setDescription("");
@@ -24,12 +27,13 @@ const TaskForm = ({ onAddTask }) => {
           className="flex-grow p-2 border border-gray-300 rounded-l focus:outline-none"
           required
         />
-        <div　className="p-2 border border-gray-300 rounded-l focus:outline-none">期限</div>
+        <div className="p-2 border border-gray-300 rounded-l focus:outline-none">期限</div>
         <input
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
           className="p-2 border border-gray-300 focus:outline-none"
+          required
         />
         <button
           type="submit"
@@ -44,6 +48,7 @@ const TaskForm = ({ onAddTask }) => {
         placeholder="タスクの詳細を入力..."
         className="w-full p-2 border border-gray-300 rounded focus:outline-none"
         rows="2"
+        required
       />
     </form>
   );
