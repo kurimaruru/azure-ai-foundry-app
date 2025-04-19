@@ -11,12 +11,14 @@ export const useTaskManager = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = (title) => {
+  const addTask = (title, description = "", dueDate = "") => {
     if (!title.trim()) return;
 
     const newTask = {
       id: Date.now(),
       title,
+      description,
+      dueDate,
       completed: false,
       createdAt: new Date().toLocaleString(),
     };
@@ -36,10 +38,10 @@ export const useTaskManager = () => {
     );
   };
 
-  const updateTask = (id, newTitle) => {
+  const updateTask = (id, updates) => {
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, title: newTitle } : task
+        task.id === id ? { ...task, ...updates } : task
       )
     );
   };
